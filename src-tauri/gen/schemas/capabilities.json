@@ -1,0 +1,1 @@
+{"default":{"identifier":"default","description":"メインウィンドウ用の権限","remote":{"urls":["http://localhost:5173"]},"local":true,"windows":["main"],"permissions":["core:default","shell:allow-open","notification:default","dialog:default"]}}

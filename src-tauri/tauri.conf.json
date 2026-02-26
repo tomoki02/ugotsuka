@@ -1,0 +1,50 @@
+{
+  "productName": "うごけば使える",
+  "version": "0.1.0",
+  "identifier": "com.ugokeba.tsukaeru",
+  "build": {
+    "frontendDist": "../dist",
+    "devUrl": "http://localhost:5173",
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "security": {
+      "assetProtocol": {
+        "enable": true,
+        "scope": ["$APPLOCALDATA/**", "$APPDATA/**"]
+      },
+      "csp": {
+        "default-src": "'self'",
+        "connect-src": "ipc: http://ipc.localhost https://cdn.jsdelivr.net https://storage.googleapis.com",
+        "img-src": "'self' asset: http://asset.localhost blob: data:",
+        "media-src": "'self' blob:",
+        "script-src": "'self' https://cdn.jsdelivr.net 'unsafe-eval'",
+        "worker-src": "'self' blob:"
+      }
+    },
+    "windows": [
+      {
+        "title": "うごけば使える",
+        "width": 900,
+        "height": 700,
+        "minWidth": 600,
+        "minHeight": 500
+      }
+    ]
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": ["icons/icon.ico"],
+    "windows": {
+      "certificateThumbprint": null,
+      "digestAlgorithm": "sha256",
+      "timestampUrl": ""
+    },
+    "longDescription": "普段使うアプリの利用時間を制限し、腕立て・スクワットなどの運動で報酬時間を獲得するアプリです。",
+    "shortDescription": "アプリ利用時間の管理と運動報酬",
+    "category": "Utility"
+  }
+}

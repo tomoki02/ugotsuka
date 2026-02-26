@@ -1,0 +1,27 @@
+[package]
+name = "ugokeba_tsukaeru"
+version = "0.1.0"
+description = "運動で残高を稼いで、アプリを使えるようにする"
+edition = "2021"
+rust-version = "1.70"
+
+[lib]
+name = "ugokeba_tsukaeru_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = ["codegen"] }
+
+[dependencies]
+tauri = { version = "2", features = ["protocol-asset", "tray-icon"] }
+tauri-plugin-shell = "2"
+tauri-plugin-notification = "2"
+tauri-plugin-dialog = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sysinfo = "0.31"
+chrono = "0.4"
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]
